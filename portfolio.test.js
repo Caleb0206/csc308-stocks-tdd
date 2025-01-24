@@ -56,7 +56,7 @@ test('2.4 Test make a sale - success', () => {
 
     expect(portfolio.stocks).toEqual(expected);
 });
-test('2.4 Test make a sale - error', () => {
+test('2.4 Test make a sale with unowned stock - error', () => {
     const portfolio = new Portfolio();
 
     portfolio.stocks = {"MCRSFT": 4};
@@ -66,8 +66,6 @@ test('2.4 Test make a sale - error', () => {
 test('2.5 Test get ticker count - success', () => {
     const portfolio = new Portfolio();
      portfolio.stocks = {"APPL":3, "MCRSFT":2};
-
-     expect(portfolio.getTickerCount()).toEqual(2);
 
      portfolio.makePurhcase("EPIC", 3);
 

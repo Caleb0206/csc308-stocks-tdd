@@ -15,12 +15,12 @@ class Portfolio {
             this.stocks[symbol] = num;
     }
     makeSale(symbol, num) {
+        if(!this.stocks[symbol])
+            throw new Error("Stock does not exist");
         if(this.stocks[symbol] >= num)
             this.stocks[symbol] -= num;
-        else if(this.stocks[symbol] < num)
-            throw new Error("Not possible to sell this number of shares");
         else
-            throw new Error("Stock does not exist");
+            throw new Error("Not possible to sell this number of shares");
         // Implementation of increment 2.6
         if(this.stocks[symbol] == 0)
         {
